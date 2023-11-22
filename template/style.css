@@ -1,0 +1,105 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navigation Styles */
+  
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    color: #333333;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Header Styles */
+  
+  .jumbotron {
+    background-color: #007bff;
+    padding: 80px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .jumbotron h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .jumbotron p {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  /* Card Styles */
+  
+  .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Query for Responsive Layout */
+  
+  @media (max-width: 767px) {
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  
+  

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block start %}
+<section class="container mt-5">
+  <div class="row">
+    {% for blog in blogs %}
+    <div class="col-lg-4">
+      <div class="card mb-4 bg-light">
+        <img src="/media/{{ blog.image|safe }}" class="card-img-top" alt="Blog Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ blog.title }}</h5>
+          <p class="card-text" style="color: #666666; font-size: 14px; font-style: italic; margin-bottom: 10px;">{{blog.user.username}}</p>
+          <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

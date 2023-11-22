@@ -1,0 +1,67 @@
+{%extends "base.html" %}
+
+{% block start %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>About Swayam Gaba</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            color: #777;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <img src="https://media.licdn.com/dms/image/C4D03AQGYTe8jWJqQxA/profile-displayphoto-shrink_800_800/0/1654671281800?e=2147483647&v=beta&t=UnunY-U1J5SFdJxbMCC4VcrBU-j_Kv1wdOudEP5me7I" alt="Swayam Gaba" class="profile-img">
+                <h1>About Swayam Gaba</h1>
+                <p>Swayam Gaba is a tech enthusiast and developer from the third year of the Electrical Engineering Department at SGSITS Indore.</p>
+                <p>With a passion for technology and a curiosity to explore new concepts, Swayam enjoys working on various development projects and learning about the latest trends in the tech industry.</p>
+                <p>Whether it's coding, problem-solving, or staying up-to-date with emerging technologies, Swayam is always eager to expand knowledge and contribute to innovative solutions.</p>
+                <div class="contact-info">
+                    <h4>Contact Information:</h4>
+                    <p>Phone: +91 8989422330</p>
+                    <p>Email: swayamgaba99@gmail.com</p>
+                    <p>Address: 99,Gulmohar Colony, Ratlam, M.P.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

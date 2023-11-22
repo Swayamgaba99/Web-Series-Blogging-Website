@@ -1,0 +1,105 @@
+{%extends "base.html" %}
+
+{% block start %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .login-box {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      margin-top: 100px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      height: 40px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var refButton = document.getElementById("btnButton");
+
+      refButton.onclick = function () {
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+        var csrf = document.getElementById('csrf').value
+        if (username == '' && password == '') {
+          alert('You must enter both')
+        }
+
+        var data = {
+          'username': username,
+          'password': password
+        }
+
+        fetch('/api/login/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrf,
+          },
+
+          body: JSON.stringify(data)
+        }).then(result => result.json())
+          .then(response => {
+
+            if (response.status == 200) {
+              window.location.href = '/'
+            }
+            else {
+              alert(response.message)
+            }
+
+          })
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnButton">Sign in</button>
+        <p>Don't have an account, <a href="{%url 'register_view' %}">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+{% endblock %}
